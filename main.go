@@ -1,12 +1,38 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 func main() {
 	//variable()
 	//aritmatika()
 	//logika()
 	perulangan()
+
+	// ------------------------ Bilangan Prima -------------------------------------
+	//var num int
+	//fmt.Print("Masukkan sebuah bilangan: ")
+	//fmt.Scan(&num)
+	//if isPrime(num) {
+	//	fmt.Printf("%d adalah bilangan prima.\n", num)
+	//} else {
+	//	fmt.Printf("%d bukan bilangan prima.\n", num)
+	//}
+	// ------------------------ End Bilangan Prima -------------------------------------
+
+	// ------------------------ Kelipatan 7 -------------------------------------
+	//var num int
+	//fmt.Print("Masukkan sebuah bilangan: ")
+	//fmt.Scan(&num)
+
+	//if kelipatan7(num) {
+	//	fmt.Printf("%d adalah kelipatan 7.\n", num)
+	//} else {
+	//	fmt.Printf("%d bukan kelipatan 7.\n", num)
+	//}
+	// ------------------------ Kelipatan 7 -------------------------------------
 }
 
 func variable() {
@@ -68,4 +94,30 @@ func perulangan() {
 		}
 		fmt.Println()
 	}
+}
+
+func isPrime(n int) bool {
+	if n <= 1 {
+		return false
+	}
+	if n == 2 {
+		return true
+	}
+	if n%2 == 0 {
+		return false
+	}
+
+	maxDivisor := int(math.Sqrt(float64(n)))
+
+	for i := 3; i <= maxDivisor; i += 2 {
+		if n%i == 0 {
+			return false
+		}
+	}
+
+	return true
+}
+
+func kelipatan7(number int) bool {
+	return number%7 == 0
 }
